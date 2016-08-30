@@ -207,7 +207,6 @@ td > img.people-image {
 }
 
 .people-listing.horizontal-list {
-    margin-left: -36px;
 }
 
 @media (max-width:480px) {
@@ -263,7 +262,6 @@ td > img.people-image {
 .people-listing.horizontal-list.one .list-item {
     width: 100%;
     min-height: 250px;
-    padding-left: 36px;
     max-width: none;
 }
 
@@ -281,6 +279,14 @@ td > img.people-image {
     text-align: justify;
 }
 
+.people-listing.horizontal-list.one .list-item input.chk_send{
+    left: 5px;
+}
+
+
+.people-listing.horizontal-list.one .list-item .people-image{
+    width: auto;
+}
 
 /*People table view*/
 
@@ -306,7 +312,7 @@ td > img.people-image {
 .people-listing input.chk_send {
     position: absolute;
     top: 5px;
-    left: 45px;
+    margin-left: 5px;
 }
 
 .grid-footer {
@@ -348,7 +354,7 @@ td > img.people-image {
 .people-listing div.img-box {
     position: relative;
     width: 100%;
-    height: 100%;
+    max-height: 220px;
 }
 
 .people-listing div.img-box .overlay {
@@ -766,26 +772,53 @@ input.date-picker {
     border: 0px;
 }
 
-.option-box{
+.option-box {
     float: left;
     margin-bottom: 3px;
 }
 
-.option-box button{
+.option-box button {
     background: #157399;
     color: #fff;
     border-radius: 0px;
 }
 
-.option-box i{
+.option-box i {
     margin-right: 5px;
 }
 
-.input-group-addon:hover{
+.input-group-addon:hover {
     cursor: pointer;
 }
 
-.clear-bottom{
+.clear-bottom {
     margin-bottom: 5px;
 }
 
+.list-item10 {
+    width: 9%;
+    float: left;
+    max-width: none;
+    position: relative;
+    margin-left: 10px;
+}
+
+.list-item10 .img-box10 {
+    height: 100px;
+    width: 100px;
+    position:relative;
+}
+
+
+
+.list-item10 .biography{
+    display: none;
+}
+
+.list-item10 .chk_send{
+    float: left;
+}
+
+.people-image {
+    width:100%;
+}

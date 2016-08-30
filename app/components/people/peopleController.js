@@ -6,17 +6,25 @@ app.controller('peopleListing', ['$scope', '$http', '$timeout', 'ConfigService',
         var itemsPerPage = 10;
 
         $scope.showMore = function(itemsPerPage) {
+            $timeout(function() {
+                // $('.people-listing.horizontal-list.five li').removeClass('img-box');
+                // $('.img-box').each(function() {
+                //     $(this).css('min-he')
+                // })
+
+                $('.people-listing.horizontal-list.five li').removeClass('list-item');
+                $('.people-listing.horizontal-list.five li').addClass('list-item10');
+            }, 100);
             $http.get(host + '/api/staff/countStaff').then(function(response) {
                 if (response.data.data[0].total < itemsPerPage) {
                     $scope.itemsPerPage = response.data.data[0].total;
-                }else{
+                } else {
                     $scope.itemsPerPage = itemsPerPage;
                 }
             })
             $http.get(host + '/api/staff/getStaffLimit/' + itemsPerPage).then(function(response) {
                 var data = response.data;
                 $scope.people_listing = data.data;
-                console.log($scope.people_listing);
             })
         }
 
@@ -77,6 +85,7 @@ app.controller('peopleListing', ['$scope', '$http', '$timeout', 'ConfigService',
             $('.people-listing.horizontal-list.five .list-item:nth-child(5n) + .list-item').addClass('clear-left');
 
             $('.list-view-1').on("click", function() {
+                $('.people-image').css('width','100%');
                 $('.people-listing').addClass("five");
                 $('.grid-table').addClass("hide");
                 $('.grid-content').removeClass("hide");
@@ -86,6 +95,9 @@ app.controller('peopleListing', ['$scope', '$http', '$timeout', 'ConfigService',
             });
 
             $('.list-view-2').on("click", function() {
+                $('.people-image').css('width','auto');
+                $('.people-listing.horizontal-list.five li').removeClass('list-item10');
+                $('.people-listing.horizontal-list.five li').addClass('list-item');
                 $('.people-listing').addClass("one");
                 $('.grid-table').addClass("hide");
                 $('.grid-content').removeClass("hide");

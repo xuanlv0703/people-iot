@@ -267,6 +267,42 @@ app.config(function($stateProvider, $urlRouterProvider, $transitionsProvider) {
                 }
             }
         })
+        .state('home.notification.detail', {
+            url: '/:notificationId',
+            views: {
+                'content@': {
+                    templateUrl: '/app/components/notification/notificationdetail.html',
+                    controller: 'notificationDetailCtrl'
+                }
+            }
+        })
+        .state('home.admin.notification', {
+            url: '/notification',
+            views: {
+                'content@': {
+                    templateUrl: '/app/components/notification/notificationmanagemnet.html',
+                    controller: 'notificationManagementCtrl'
+                }
+            }
+        })
+        .state('home.admin.notification.edit', {
+            url: '/edit/:notificationId',
+            views: {
+                'content@': {
+                    templateUrl: '/app/components/notification/notificationedit.html',
+                    controller: 'notificationEditCtrl'
+                }
+            }
+        })
+        .state('home.admin.notification.new', {
+            url: '/new',
+            views: {
+                'content@': {
+                    templateUrl: '/app/components/notification/newnotification.html',
+                    controller: 'notificationNewCtrl'
+                }
+            }
+        })
         .state('home.deviceiot', {
             url: 'device-iot',
             views: {

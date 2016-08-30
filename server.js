@@ -1,9 +1,10 @@
-var express 		= require("express");
-var app 			= express();
-var client 			= require("./client.js");
-var config 			= require('./config');
-var http 			= require('http').Server(app);
-var port 			= config.port;
+var express 	= require("express");
+var app 		= express();
+var client 		= require("./client.js");
+var config 		= require('./config');
+var http 		= require('http').Server(app);
+var port        = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080;
+var ipadr       = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
 
 var io = require('socket.io')(http);
 var mqtt = require('mqtt');
@@ -46,11 +47,9 @@ REST.prototype.configureExpress = function() {
 }
 
 REST.prototype.startServer = function() {
-    http.listen(port, function() {
-        console.log("All right ! I am alive at Port '" + port + "'.");
-    });
-     dataEmitHTML();
+    app.listen(port, ipadr);
+    console.log('Server running on ' + ipadr + ':' + port);
+    dataEmitHTML();
 }
-
 
 new REST();
