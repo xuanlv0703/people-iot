@@ -2,8 +2,8 @@ var app = angular.module('peopleIotApp', ['ui.router', 'datatables', 'angular-md
     'ui.bootstrap.datetimepicker','ui-notification']);
 app.factory('ConfigService', [function() {
     return {
-        host: 'http://api-rutledge.apps.openshift.rasia',
-        host_socketio: 'http://172.16.0.115:9003'
+        host: 'http://api-rutledge.apps.openshift.rasia'
+        // host_socketio: 'http://172.16.0.69:9003'
     };
 }]);
 
