@@ -6,9 +6,10 @@ var http 		= require('http').Server(app);
 var port        = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080;
 var ipadr       = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
 
-var io = require('socket.io')(http);
-var mqtt = require('mqtt');
-var multipart = require('connect-multiparty');
+var io          = require('socket.io')(http);
+var socket      = io.connect('http://people-rutledge.apps.openshift.rasia:8000/',{'forceNew':true });
+var mqtt        = require('mqtt');
+var multipart   = require('connect-multiparty');
 
 function REST() {
     var self = this;
@@ -25,7 +26,7 @@ function dataEmitHTML() {
         server.on('message', function(topic, message) {
             if ('positions' === topic) {
                 message = JSON.parse(message);
-                io.emit('data', message);
+                socket.emit('data', message);
             }
         });
     });
