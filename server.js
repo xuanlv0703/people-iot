@@ -7,6 +7,8 @@ var server      = require('http').createServer(app)
 var port        = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080;
 var ipadr       = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
 
+console.log(port);
+
 // var io          = require('socket.io')(http);
 var io          = require("socket.io").listen(server)
 var mqtt        = require('mqtt');

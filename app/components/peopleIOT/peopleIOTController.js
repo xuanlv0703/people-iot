@@ -229,8 +229,7 @@ app.controller('peopleIOTCtrl', ['$scope', 'ConfigService', '$http', '$filter', 
             }
         };
 
-        // var socket = io.connect();
-        var socket = io.connect('//localhost:'+process.env.OPENSHIFT_NODEJS_PORT || 3000);
+        var socket = io.connect();
         var x = undefined;
         var y = undefined;
         var id = undefined;
