@@ -230,7 +230,7 @@ app.controller('peopleIOTCtrl', ['$scope', 'ConfigService', '$http', '$filter', 
         };
 
         // var socket = io.connect();
-        var socket = io.connect('http://people-rutledge.apps.openshift.rasia:8000/', {'forceNew':true });
+        var socket = io.connect('http://people-rutledge.apps.openshift.rasia');
 
         var x = undefined;
         var y = undefined;
