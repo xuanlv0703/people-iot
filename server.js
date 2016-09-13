@@ -6,7 +6,7 @@ var http 		= require('http').Server(app);
 // var port        = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080;
 // var ipadr       = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
 
-var ipadr = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
+var ipadr = process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
 var port = process.env.OPENSHIFT_NODEJS_PORT || 8000;
 
 
