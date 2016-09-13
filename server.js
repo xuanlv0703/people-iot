@@ -3,8 +3,12 @@ var app 		= express();
 var client 		= require("./client.js");
 var config 		= require('./config');
 var http 		= require('http').Server(app);
-var port        = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080;
-var ipadr       = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
+// var port        = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080;
+// var ipadr       = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
+
+var ipadr = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
+var port = process.env.OPENSHIFT_NODEJS_PORT || 8000;
+
 
 var io          = require('socket.io')(http);
 var mqtt        = require('mqtt');
