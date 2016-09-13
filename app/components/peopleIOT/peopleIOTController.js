@@ -229,7 +229,11 @@ app.controller('peopleIOTCtrl', ['$scope', 'ConfigService', '$http', '$filter', 
             }
         };
 
-        var socket = io.connect();
+        // var socket = io.connect();
+        var socket = io(socketAddress, {
+          path: '/socket.io-client'
+        });
+
 
         var x = undefined;
         var y = undefined;
