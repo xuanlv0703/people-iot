@@ -229,10 +229,7 @@ app.controller('peopleIOTCtrl', ['$scope', 'ConfigService', '$http', '$filter', 
             }
         };
 
-        // var socket = io.connect();
-        var socket = io('ws://0.0.0.0:8000');
-
-
+        var socket = io.connect();
         var x = undefined;
         var y = undefined;
         var id = undefined;

@@ -10,9 +10,6 @@ var io          = require('socket.io')(http);
 var mqtt        = require('mqtt');
 var multipart   = require('connect-multiparty');
 
-
-var socketAddress = 'ws://' + ipadr + ':8000';
-
 function REST() {
     var self = this;
     self.configureExpress();
