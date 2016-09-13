@@ -11,15 +11,7 @@ var mqtt        = require('mqtt');
 var multipart   = require('connect-multiparty');
 
 
-var socketAddress = '';
-if (location.hostname !== 'localhost') {
-  if (location.protocol === 'https:') {
-    socketAddress = 'wss://' + location.hostname + ':8443';
-  } else {
-    socketAddress = 'ws://' + location.hostname + ':8000';
-  }
-}
-
+var socketAddress = 'ws://' + ipadr + ':8000';
 
 function REST() {
     var self = this;
