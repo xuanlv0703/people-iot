@@ -44,10 +44,12 @@ function dataEmitHTML() {
         console.log('connected.');
     })
     server.on('connect', function() {
+        console.log('activemq connected.');
         server.subscribe('positions');
         server.on('message', function(topic, message) {
             if ('positions' === topic) {
                 message = JSON.parse(message);
+                console.log(message);
                 io.emit('data', message);
             }
         });
