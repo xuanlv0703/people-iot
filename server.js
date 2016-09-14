@@ -26,7 +26,9 @@ var http 		= require('http').Server(app);
 var port        = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080;
 var ipadr       = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
 
-var io          = require('socket.io')(http);
+// var io          = require('socket.io')(http);
+var serverapp  = app.listen(port);
+var io      = require('socket.io').listen(serverapp);
 var mqtt        = require('mqtt');
 var multipart   = require('connect-multiparty');
 
