@@ -36,7 +36,7 @@ function REST() {
 };
 
 function dataEmitHTML() {
-    var server = mqtt.connect('tcp://172.16.0.108:1883', {
+    var server = mqtt.connect('tcp://172.16.0.69:1883', {
         username: 'admin',
         password: 'admin'
     });
