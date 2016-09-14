@@ -40,6 +40,9 @@ function dataEmitHTML() {
         username: 'admin',
         password: 'admin'
     });
+    io.on('connection', function(socket) {
+        console.log('connected.');
+    })
     server.on('connect', function() {
         server.subscribe('positions');
         server.on('message', function(topic, message) {
