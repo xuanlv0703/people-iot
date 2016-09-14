@@ -50,7 +50,7 @@ function dataEmitHTML() {
             if ('positions' === topic) {
                 message = JSON.parse(message);
                 console.log(message);
-                io.emit('data', message);
+                socket.emit('data', message);
             }
         });
     });
