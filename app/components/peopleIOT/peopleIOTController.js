@@ -229,7 +229,7 @@ app.controller('peopleIOTCtrl', ['$scope', 'ConfigService', '$http', '$filter', 
             }
         };
 
-        var socket = io.connect();
+        var socket = io('http://people-rutledge.apps.openshift.rasia');
         var x = undefined;
         var y = undefined;
         var id = undefined;
