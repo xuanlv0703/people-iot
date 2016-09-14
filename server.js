@@ -40,9 +40,10 @@ function dataEmitHTML() {
         username: 'admin',
         password: 'admin'
     });
+    
     io.on('connection', function(socket) {
-        console.log('connected.');
-    })
+    console.log(socket.id + ": connected.");
+    
     server.on('connect', function() {
         console.log('activemq connected.');
         server.subscribe('positions');
@@ -53,6 +54,7 @@ function dataEmitHTML() {
                 io.emit('data', message);
             }
         });
+    });
     });
 } 
 
