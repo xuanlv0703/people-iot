@@ -79,7 +79,11 @@ REST.prototype.configureExpress = function() {
 REST.prototype.startServer = function() {
     app.listen(port, ipadr);
     console.log('Server running on ' + ipadr + ':' + port);
-    dataEmitHTML();
+    // dataEmitHTML();
+     io.on('connection', function(socket) {
+    console.log(socket.id + ": connected.");
+         
+     });
 }
 
 new REST();
