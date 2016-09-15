@@ -82,7 +82,7 @@ REST.prototype.configureExpress = function() {
 }
 
 REST.prototype.startServer = function() {
-    app.listen(port, ipadr);
+    http.listen(port, ipadr);
     console.log('Server running on ' + ipadr + ':' + port);
     // dataEmitHTML();
    
