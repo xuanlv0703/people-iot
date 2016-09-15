@@ -28,7 +28,8 @@ var ipadr       = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.
 
 // var io          = require('socket.io')(http);
 // var serverapp  = app.listen(port);
-var io      = require('socket.io').listen(app);
+
+var io      = require('socket.io')(http);
 var mqtt        = require('mqtt');
 var multipart   = require('connect-multiparty');
 
