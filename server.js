@@ -50,8 +50,8 @@ function dataEmitHTML() {
     });
     
     io.on('connection', function(socket) {
-    console.log(socket.id + ": connected.");
-    
+        console.log(socket.id + ": connected.");
+    });
     server.on('connect', function() {
         console.log('activemq connected.');
         server.subscribe('positions');
@@ -59,10 +59,9 @@ function dataEmitHTML() {
             if ('positions' === topic) {
                 message = JSON.parse(message);
                 console.log(message);
-                socket.emit('data', message);
+                io.emit('data', message);
             }
         });
-    });
     });
 } 
 
