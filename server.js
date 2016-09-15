@@ -33,10 +33,10 @@ var io      = require('socket.io')(http);
 var mqtt        = require('mqtt');
 var multipart   = require('connect-multiparty');
 
-  io.on('connection', function(socket) {
-    console.log(socket.id + ": connected.");
+//   io.on('connection', function(socket) {
+//     console.log(socket.id + ": connected.");
          
-     });
+//      });
 
 function REST() {
     var self = this;
@@ -84,7 +84,7 @@ REST.prototype.configureExpress = function() {
 REST.prototype.startServer = function() {
     http.listen(port, ipadr);
     console.log('Server running on ' + ipadr + ':' + port);
-    // dataEmitHTML();
+    dataEmitHTML();
    
 }
 
